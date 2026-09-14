@@ -15,6 +15,12 @@
   --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .app {
   min-height: 100vh;
   display: flex;
@@ -366,7 +372,7 @@ main {
   margin: 0;
 }
 
-/* About Highlights (विरासत कार्ड्स) */
+/* About Highlights */
 .about-highlights {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -739,6 +745,17 @@ main {
   padding: 0.9rem 2.2rem;
 }
 
+.contact-note {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  background: var(--cream);
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--gold);
+  margin: 0;
+  line-height: 1.5;
+}
+
 .success {
   color: #2e7d32;
   font-weight: 600;
@@ -802,6 +819,474 @@ main {
   padding-top: 1.3rem;
   font-size: 0.9rem;
   opacity: 0.85;
+}
+
+/* ================= ADMIN LOGIN ================= */
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--maroon-dark), var(--maroon));
+  padding: 2rem;
+}
+
+.admin-login h2 {
+  color: var(--gold-light);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.admin-login form {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  border-top: 5px solid var(--gold);
+}
+
+.admin-login input {
+  padding: 0.95rem 1.1rem;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.3s ease;
+  background: var(--cream);
+  color: var(--text);
+}
+
+.admin-login input:focus {
+  border-color: var(--gold);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.2);
+}
+
+.admin-login button[type="submit"] {
+  padding: 0.95rem 1.5rem;
+  background: var(--maroon);
+  color: var(--gold-light);
+  border: none;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  margin-top: 0.5rem;
+}
+
+.admin-login button[type="submit"]:hover {
+  background: var(--maroon-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(122, 31, 31, 0.5);
+}
+
+.admin-login .error {
+  color: #c62828;
+  background: #ffebee;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.95rem;
+  border-left: 4px solid #c62828;
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* ================= PASSWORD FIELD WITH EYE ICON ================= */
+.password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-field input {
+  width: 100%;
+  padding-right: 3.2rem !important;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 0.9rem;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--maroon);
+  cursor: pointer;
+  padding: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 2;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.toggle-password:hover {
+  background: rgba(122, 31, 31, 0.1);
+  color: var(--maroon-dark);
+  transform: translateY(-50%) !important;
+  box-shadow: none !important;
+}
+
+.toggle-password:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.25);
+}
+
+/* ================= ADMIN PANEL ================= */
+.admin-panel {
+  min-height: 100vh;
+  background: var(--cream);
+  padding: 2rem;
+}
+
+.admin-header {
+  max-width: 1100px;
+  margin: 0 auto 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background: var(--maroon);
+  padding: 1.2rem 2rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(122, 31, 31, 0.35);
+  flex-wrap: wrap;
+}
+
+.admin-header h2 {
+  color: var(--gold-light);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.logout-btn {
+  padding: 0.6rem 1.4rem;
+  background: transparent;
+  color: var(--gold-light);
+  border: 2px solid var(--gold-light);
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.logout-btn:hover {
+  background: var(--gold-light);
+  color: var(--maroon);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+}
+
+.admin-panel > p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-top: 3rem;
+}
+
+/* ================= ADMIN CONTROLS (Search + Filter) ================= */
+.admin-controls {
+  max-width: 1100px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.8rem 2.6rem 0.8rem 2.8rem;
+  border: 2px solid #ddd;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.3s ease;
+  background: var(--white);
+  color: var(--text);
+}
+
+.search-box input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.15);
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  pointer-events: none;
+}
+
+.clear-search {
+  position: absolute;
+  right: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #eee;
+  border: none;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.25s ease;
+}
+
+.clear-search:hover {
+  background: var(--maroon);
+  color: white;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-tabs button {
+  padding: 0.6rem 1.1rem;
+  background: var(--white);
+  border: 2px solid #ddd;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.filter-tabs button:hover {
+  border-color: var(--maroon);
+  color: var(--maroon);
+}
+
+.filter-tabs button.active {
+  background: var(--maroon);
+  border-color: var(--maroon);
+  color: var(--gold-light);
+}
+
+/* ===== Messages List ===== */
+.messages-list {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.message-card {
+  background: var(--white);
+  padding: 1.6rem;
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  border-left: 5px solid var(--gold);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.message-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--maroon);
+}
+
+.message-card.replied {
+  border-left-color: #2e7d32;
+  background: #f1f8f1;
+}
+
+.message-card::before {
+  content: "📩";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  opacity: 0.15;
+}
+
+.message-card p {
+  margin-bottom: 0.6rem;
+  font-size: 0.98rem;
+  color: var(--text);
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.message-card p strong {
+  color: var(--maroon);
+  font-weight: 700;
+  margin-right: 0.3rem;
+}
+
+.message-card .timestamp {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px dashed #ddd;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-style: italic;
+  text-align: right;
+}
+
+/* ================= REPLY ACTIONS ================= */
+.reply-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.8rem 0;
+}
+
+.reply-whatsapp,
+.reply-call,
+.reply-email,
+.delete-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.reply-whatsapp {
+  background: #25d366;
+  color: white;
+}
+.reply-whatsapp:hover {
+  background: #1eb955;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+}
+
+.reply-call {
+  background: var(--maroon);
+  color: var(--gold-light);
+}
+.reply-call:hover {
+  background: var(--maroon-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(122, 31, 31, 0.4);
+}
+
+.reply-email {
+  background: #1976d2;
+  color: white;
+}
+.reply-email:hover {
+  background: #0d47a1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(25, 118, 210, 0.4);
+}
+
+.delete-btn {
+  background: #d32f2f;
+  color: white;
+}
+.delete-btn:hover {
+  background: #b71c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(211, 47, 47, 0.4);
+}
+
+/* ================= ADMIN REPLY ================= */
+.admin-reply-input {
+  width: 100%;
+  margin-top: 0.8rem;
+  padding: 0.7rem;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+  min-height: 60px;
+  background: var(--white);
+  color: var(--text);
+}
+
+.admin-reply-input:focus {
+  border-color: var(--gold);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.15);
+}
+
+.save-reply-btn {
+  margin-top: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  background: var(--maroon);
+  color: var(--gold-light);
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.save-reply-btn:hover {
+  background: var(--maroon-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(122, 31, 31, 0.4);
+}
+
+.saved-reply {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  color: #1b5e20;
+}
+
+.saved-reply strong {
+  color: #1b5e20;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -966,6 +1451,68 @@ main {
 
   .footer {
     padding: 2.5rem 1.2rem 1rem;
+  }
+
+  .admin-login form {
+    padding: 2rem 1.5rem;
+  }
+
+  .admin-panel {
+    padding: 1.2rem;
+  }
+
+  .admin-header {
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+  }
+
+  .admin-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .logout-btn {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.85rem;
+  }
+
+  .messages-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .message-card {
+    padding: 1.3rem;
+  }
+
+  .admin-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-tabs {
+    justify-content: center;
+  }
+
+  .filter-tabs button {
+    font-size: 0.78rem;
+    padding: 0.5rem 0.85rem;
+  }
+
+  .contact-note {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .reply-actions {
+    gap: 0.4rem;
+  }
+
+  .reply-whatsapp,
+  .reply-call,
+  .reply-email,
+  .delete-btn {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.8rem;
   }
 }
 
