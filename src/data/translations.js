@@ -7,11 +7,11 @@ export const translations = {
     gallery: "गैलरी",
     donate: "दान",
     contact: "संपर्क",
-    templeName: "श्री दाऊजी मंदिर",
+    templeName: "श्री दाऊजी मंदिर प्रबंध समिति, जेवर",
 
     // Hero
     heroTag: "🙏 जय श्री दाऊजी महाराज",
-    heroTitle: "श्री दाऊजी मंदिर",
+    heroTitle: "श्री दाऊजी मंदिर प्रबंध समित",
     heroLocation: "जेवर, उत्तर प्रदेश",
     heroSub:
       "श्रद्धा, भक्ति और परंपरा का पवित्र धाम — जहाँ हर साल भव्य मेला लगता है",
@@ -94,7 +94,7 @@ export const translations = {
     footerTag: "जेवर, उत्तर प्रदेश — श्रद्धा और भक्ति का पवित्र धाम",
     footerLinks: "लिंक",
     footerContact: "संपर्क",
-    copyright: "Shri Dauji Mandir Trust. सर्वाधिकार सुरक्षित।",
+    copyright: "श्री दाऊजी मंदिर प्रबंध समिति, जेवर. सर्वाधिकार सुरक्षित।",
   },
 
   en: {
@@ -105,11 +105,11 @@ export const translations = {
     gallery: "Gallery",
     donate: "Donate",
     contact: "Contact",
-    templeName: "Shri Dauji Mandir",
+    templeName: "Shri Dauji Mandir Prabandh Samiti, Jewar",
 
     // Hero
     heroTag: "🙏 Jai Shri Dauji Maharaj",
-    heroTitle: "Shri Dauji Mandir",
+    heroTitle: "Shri Dauji Mandir Prabandh Samiti",
     heroLocation: "Jewar, Uttar Pradesh",
     heroSub:
       "A sacred abode of faith, devotion and tradition — hosting a grand fair every year",
@@ -193,6 +193,6 @@ export const translations = {
     footerTag: "Jewar, Uttar Pradesh — A sacred abode of faith and devotion",
     footerLinks: "Links",
     footerContact: "Contact",
-    copyright: "Shri Dauji Mandir Trust. All rights reserved.",
+    copyright: "Shri Dauji Mandir Prabandh Samiti, Jewar. All rights reserved.",
   },
 };

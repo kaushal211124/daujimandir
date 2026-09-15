@@ -776,20 +776,20 @@ main {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  padding-bottom: 2rem;
+  gap: 3.5rem;              /* ✅ large screen पर ज़्यादा gap */
+  padding-bottom: 2.5rem;    /* ✅ थोड़ा ज़्यादा नीचे की तरफ़ space */
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .footer-grid h3,
 .footer-grid h4 {
   color: var(--gold-light);
-  margin-bottom: 0.9rem;
+  margin-bottom: 1.1rem;     /* ✅ थोड़ा और space heading के नीचे */
   font-size: 1.1rem;
 }
 
 .footer-grid p {
-  line-height: 1.8;
+  line-height: 1.9;
   font-size: 0.95rem;
   opacity: 0.9;
 }
@@ -799,7 +799,7 @@ main {
 }
 
 .footer-grid ul li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;      /* ✅ list items के बीच ज़्यादा gap */
 }
 
 .footer-grid a {
@@ -816,9 +816,31 @@ main {
 
 .footer-bottom {
   text-align: center;
-  padding-top: 1.3rem;
+  padding-top: 1.5rem;
   font-size: 0.9rem;
   opacity: 0.85;
+}
+
+/* ================= FOOTER — TABLET & MOBILE ================= */
+/* ✅ 992px से नीचे वाली स्क्रीन पर पुराना gap वापस */
+@media (max-width: 992px) {
+  .footer-grid {
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-grid h3,
+  .footer-grid h4 {
+    margin-bottom: 0.9rem;
+  }
+
+  .footer-grid ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-bottom {
+    padding-top: 1.3rem;
+  }
 }
 
 /* ================= ADMIN LOGIN ================= */
